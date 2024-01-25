@@ -1,4 +1,4 @@
-use nalgebra::{Matrix3, Matrix3x4, Matrix4, Matrix4x3, Translation3, Vector2, Vector3, Vector4};
+use nalgebra::{Matrix3, Matrix3x4, Matrix4, Translation3, Vector2, Vector3};
 
 pub struct Camera {
     perspective: Matrix3x4<f32>,
@@ -26,14 +26,6 @@ impl Camera {
             yaw: 0.0,
             roll: 0.0,
         }
-    }
-
-    pub fn perspective(&self) -> Matrix3x4<f32> {
-        self.perspective
-    }
-
-    pub fn pitch(&self) -> f32 {
-        self.pitch.to_degrees()
     }
 
     pub fn translate(&mut self, v: Vector3<f32>) {
